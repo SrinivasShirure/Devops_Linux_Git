@@ -1,0 +1,20 @@
+🔐 Cybersecurity Commands I Covered:
+✔ "nmap" – Network scanning & vulnerability discovery
+✔ "tcpdump" – Packet capturing for traffic analysis
+✔ "ss / netstat" – Monitoring open ports & connections
+✔ "grep / find" – Log analysis & sensitive data search
+✔ "journalctl" – System log investigation
+✔ "fail2ban" – Protect against brute-force attacks
+✔ "hashsum" – File integrity verification
+
+---
+
+⚙️ DevOps Commands I Practiced:
+✔ "ls", "cd", "pwd" – File navigation basics
+✔ "mkdir", "rm", "cp", "mv" – File & directory management
+✔ "top", "ps" – Process monitoring
+✔ "df", "du", "free" – Resource usage tracking
+✔ "systemctl" – Service management
+✔ "docker", "kubectl" – Container & orchestration basics
+✔ "git" – Version control
+✔ "ssh" – Secure remote access
