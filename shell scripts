@@ -1,0 +1,114 @@
+Example 1
+
+#!/bin/bash  
+echo "This is a shell script"  
+ls
+echo "I am done running ls"  
+SOMEVAR='text stuff'  
+echo "$SOMEVAR"
+
+Example 2
+#!/bin/bash 
+echo "Hello there"
+echo "My name is $(whoami)"
+echo "Nice to meet you"
+
+
+------------------
+
+
+Example Monitoring script  
+
+#!/bin/bash  
+echo "This is a shell script"
+echo "the hostname of this machine is "
+hostname 
+hostname -i
+ps
+echo "memory used in the machine "
+free
+echo "disk used in the machine "
+df -h
+echo "the above information from the machine"  
+SOMEVAR='text stuff'  
+echo "$SOMEVAR"
+
+Expected Output 
+
+-------------------
+
+
+cat > system_health.sh <<'EOF'
+#!/bin/bash
+
+echo "======================================"
+echo "       Linux System Health Check"
+echo "======================================"
+
+echo
+echo "Hostname: $(hostname)"
+echo "IP Address: $(hostname -I | awk '{print $1}')"
+
+echo
+echo "Memory Usage:"
+free -h
+
+echo
+echo "Disk Usage:"
+df -h
+
+echo
+echo "CPU & Processes:"
+uptime
+ps aux --sort=-%cpu | head -n 6
+
+echo
+echo "System Health Check Completed!"
+EOF
+
+----------
+
+read 
+
+
+Example 5 Get User Input from the command line 
+
+
+#!/bin/bash
+echo "Enter Your email"
+read name
+echo "Welcome $name to Linux Learning session"
+
+
+--------------
+
+
+
+#!/bin/bash
+# Set the limit
+LIMIT=80
+# Check disk usage of root directory
+USAGE=$(df / | tail -1 | awk '{print $5}' | tr -d '%')
+echo "Current disk usage is $USAGE%"
+if [ $USAGE -ge $LIMIT ]
+then
+    echo "Warning! Disk space is more than 80%"
+else
+    echo "Disk space is OK"
+fi
+
+
+-------------
+
+
+
+#!/bin/bash
+SERVICE="nginx"
+if systemctl is-active --quiet $SERVICE
+then
+    echo "$SERVICE is running"
+else
+    echo "$SERVICE is not running"
+    echo "Starting $SERVICE..."
+    systemctl start $SERVICE
+    echo "$SERVICE started successfully"
